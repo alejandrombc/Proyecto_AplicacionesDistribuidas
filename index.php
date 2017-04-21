@@ -1,6 +1,6 @@
 <?php
 	
-	include('test.php');
+	include('config.php');
 
 	include('templates/index.html');
 	
