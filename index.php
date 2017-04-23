@@ -1,7 +1,7 @@
 <?php
 	
-	include('config.php');
+	include('config_general.php'); //INCLUSION DEL ARCHIVO DE CONFIGURACION GENERAL
 
-	include('templates/index.html');
-	
+	include('templates/index.html'); //INCLUSION DEL HTML PRINCIPAL
+
 ?>

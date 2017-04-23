@@ -1,0 +1,37 @@
+<body>
+  <?php 
+
+    if(MENU_SUPERIOR) { 
+      
+      include('templates/menu_superior.html');
+
+    }
+
+  ?>
+  <div class="container-fluid">
+
+      <div class="row row-offcanvas row-offcanvas-left">
+          <div class="row-offcanvas row-offcanvas-right">
+              
+              <!-- AGREGO TODO EL CONTENIDO DE LA PAGINA -->
+
+              <?php include('templates/menu_izquierdo.html'); ?>
+
+              <?php include('templates/contenido.html'); ?>
+
+
+              <?php 
+
+                if(MENU_DERECHO) {
+
+                  include('templates/menu_derecho.html');
+
+                } 
+
+              ?>
+
+          </div>
+
+      </div>
+  </div>
+</body>
