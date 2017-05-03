@@ -17,7 +17,14 @@
 
               <?php include('templates/menu_izquierdo.html'); ?>
 
-              <?php include('templates/contenido.html'); ?>
+
+              <?php 
+                if(!NOTICIA) {
+                  include('templates/contenido.html'); 
+                }else{
+                  include('templates/contenido_noticia.html'); 
+                }
+              ?>
 
 
               <?php 
