@@ -93,7 +93,6 @@
 		}
 	}
 
-	$conexion = CrearConexion();
-	CerrarConexion($conexion);
+	// $conexion = CrearConexion(); //Descomentar esta linea para crear la conexion
 
 ?>
