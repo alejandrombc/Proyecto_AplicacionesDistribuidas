@@ -13,7 +13,9 @@
 
 	define("TAMANO_LETRA_TEXTAREA",  "12px");	//USADO
 
-	define("TAMANO_LETRA_HEADER",  "10px");
+	define("TAMANO_LETRA_HEADER",  "30px");		//USADO
+
+	define("TAMANO_LETRA_SPAN",  "16px");		//USADO
 
 	define("TAMANO_LETRA_BOTON",  "20px");		//USADO
 

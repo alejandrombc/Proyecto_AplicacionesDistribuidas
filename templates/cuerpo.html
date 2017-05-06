@@ -19,10 +19,12 @@
 
 
               <?php 
-                if(!NOTICIA) {
+                if(!NOTICIA and !FORMULARIO) {
                   include('templates/contenido.html'); 
-                }else{
+                }elseif (NOTICIA){
                   include('templates/contenido_noticia.html'); 
+                }else{
+                  include('templates/contenido_formulario.html'); 
                 }
               ?>
 
@@ -34,9 +36,6 @@
                   include('templates/menu_derecho.html');
 
                 } 
-                if (FORMULARIO) {
-                  include('templates/formulario.html'); 
-                }
               ?>
 
           </div>
