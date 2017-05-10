@@ -63,6 +63,7 @@
 			$stmt->bind_param('s', $name); //"s" de que la Base de datos espera un "string"
 			if ($stmt->execute() === TRUE) {
 			    echo "Query ejecutado exitosamente"; //Este print lo puede quitar
+			    // $result = $stmt->get_result(); //Para el caso de SELECT que retornan valores
 			} else {
 			    echo "Error al ejecutar el query: " . $conn->error;
 			}
