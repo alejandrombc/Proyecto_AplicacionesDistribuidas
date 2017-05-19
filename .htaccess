@@ -1,0 +1,8 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^config$ config.php
+RewriteRule ^configBD$ BD.php
+RewriteRule ^CrossSite$ cross.php
+RewriteRule ^noticia$ noticia.php
+RewriteRule ^formulario$ formulario.php

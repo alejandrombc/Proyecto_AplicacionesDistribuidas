@@ -1,0 +1,33 @@
+<?php $json_g = readG();?>
+<h2>Configuración general</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Menús</div>
+
+                <!-- List group -->
+                <ul class="list-group no-c">
+                    <li class="list-group-item">
+                        Menú Superior
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox" value=<?php echo $json_g["MENU_SUPERIOR"];?> />
+                            <label for="someSwitchOptionPrimary" class="label-primary"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Menú Derecho
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox" value=<?php echo $json_g["MENU_DERECHO"];?> />
+                            <label for="someSwitchOptionInfo" class="label-info"></label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button id="db" class="btn btn-primary" type="button" name="button">Base de Datos</button>
+            <button id="cs" class="btn btn-primary" type="button" name="button">Cross Site</button>
+        </div>
+    </div>
+</div>

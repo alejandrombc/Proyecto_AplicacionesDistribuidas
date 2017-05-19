@@ -1,8 +1,9 @@
+<?php $json_a = readG()?>
 <body>
-  <?php 
+  <?php
 
-    if(MENU_SUPERIOR) { 
-      
+    if($json_a["MENU_SUPERIOR"]) {
+
       include('templates/menu_superior.html');
 
     }
@@ -12,30 +13,30 @@
 
       <div class="row row-offcanvas row-offcanvas-left">
           <div class="row-offcanvas row-offcanvas-right">
-              
+
               <!-- AGREGO TODO EL CONTENIDO DE LA PAGINA -->
 
               <?php include('templates/menu_izquierdo.html'); ?>
 
 
-              <?php 
+              <?php
                 if(!NOTICIA and !FORMULARIO) {
-                  include('templates/contenido.html'); 
+                  include('templates/contenido.html');
                 }elseif (NOTICIA){
-                  include('templates/contenido_noticia.html'); 
+                  include('templates/contenido_noticia.html');
                 }else{
-                  include('templates/contenido_formulario.html'); 
+                  include('templates/contenido_formulario.html');
                 }
               ?>
 
 
-              <?php 
+              <?php
 
-                if(MENU_DERECHO) {
+                if($json_a["MENU_DERECHO"]) {
 
                   include('templates/menu_derecho.html');
 
-                } 
+                }
               ?>
 
           </div>

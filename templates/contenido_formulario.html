@@ -2,19 +2,23 @@
     <div id="contenedor" class="jumbotron">
         <h1>Proyecto DAD - Formulario</h1>
         <p>Formulario de lo que se necesite enviar al servidor</p>
-    	<form role="form" id="form_1">                                 
-        	<label>Campo_1</label>
-        	<input class="form-control" name="Campo_1" id="Campo_1" type="text" required="true" autocomplete="off" value="" /><br>
-        	<label>Campo_2</label>
-        	<input class="form-control" name="Campo_2" id="Campo_2" type="text" required="true" autocomplete="off" value=""/><br>
-        	<label>Campo_3</label>
-        	<textarea style="resize:vertical;" class="form-control" name="Campo_3" id="Campo_3" autocomplete="off"/></textarea><br>
-        	<button id="Boton_1" type="sutmit" class="btn">
-            	Boton_1
-        	</button>
-        	<button id="Boton_2" type="button" class="btn">
-            	Boton_2
-        	</button> 
-    	</form>
+        <form role="form" id="form_1">                                 
+            <label>Campo 1 - Tipo Texto</label>
+            <input class="form-control" name="Campo_1" id="Campo_1" type="text" required="true" autocomplete="off" value="" /><br>
+            <label>Campo 2 - Tipo Numero</label>
+            <input class="form-control" name="Campo_2" id="Campo_2" type="number" required="true" autocomplete="off" value=""/><br>
+            <label>Campo 3 - Tipo Correo</label>
+            <input class="form-control" name="Campo_2" id="Campo_3" type="email" required="true" autocomplete="off" value=""/><br>
+            <label>Campo 4 - Tipo Contraseña</label>
+            <input class="form-control" name="Campo_2" id="Campo_4" type="password" required="true" autocomplete="off" value=""/><br>
+            <label>Campo 5 - Tipo Text Area</label>
+            <textarea style="resize:vertical;" class="form-control" name="Campo_5" id="Campo_3" autocomplete="off"/></textarea><br>
+            <button id="Boton_1" type="button" class="btn"  onclick="location.href='/'">
+                Volver
+            </button>
+            <button id="Boton_2" type="sutmit" class="btn">
+                Enviar
+            </button> 
+        </form>
     </div>
 </div>

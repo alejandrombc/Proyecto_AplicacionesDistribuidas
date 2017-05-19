@@ -1,17 +1,18 @@
+  <?php $json_a = read() ?>
 <style type="text/css">
 
   body {
     /* Para que el fixed navbar se vea bien */
-    padding-top: 70px; 
-   
+    padding-top: 70px;
+
   }
 
   .navbar-custom{
-     background-color: <?php echo COLOR_NAVBAR; ?>;
+     background-color: <?php echo $json_a['COLOR_NAVBAR']; ?>;
   }
 
   .active {
-     background-color: <?php echo COLOR_ACTIVE_LINK; ?>;
+     background-color: <?php echo $json_a['COLOR_ACTIVE_LINK']; ?>;
   }
 
   .navbar-custom .navbar-toggle {
@@ -34,75 +35,73 @@
   }
 
   body{
-    background-color: <?php echo COLOR_BACKGROUND; ?> !important;
+    background-color: <?php echo $json_a['COLOR_BACKGROUND']; ?> !important;
   }
 
   a {
-    color: <?php echo COLOR_LETRA_LINKS; ?>;  
+    color: <?php echo $json_a['COLOR_LETRA_LINKS']; ?>;
 
   }
 
   a:hover {
-    color: <?php echo COLOR_LETRA_LINKS_HOVER; ?> !important;
-    background-color: <?php echo COLOR_LINKS_HOVER; ?> !important;
+    color: <?php echo $json_a['COLOR_LETRA_LINKS_HOVER']; ?> !important;
+    background-color: <?php echo $json_a['COLOR_LINKS_HOVER']; ?> !important;
   }
 
   li {
-    color: <?php echo COLOR_LETRA_LISTA; ?>;
-    background-color: <?php echo COLOR_FONDO_LISTA; ?> ;
+    color: <?php echo $json_a['COLOR_LETRA_LISTA']; ?>;
+    background-color: <?php echo $json_a['COLOR_FONDO_LISTA']; ?> ;
   }
 
   li a{
-    color: <?php echo COLOR_LETRA_LISTA_LINKS; ?> !important;
+    color: <?php echo $json_a['COLOR_LETRA_LISTA_LINKS']; ?> !important;
   }
 
   p a, button{
-    color: <?php echo COLOR_LETRA_BOTON; ?> !important;
-    background-color: <?php echo COLOR_FONDO_BOTON; ?> !important;  
+    color: <?php echo $json_a['COLOR_LETRA_BOTON']; ?> !important;
+    background-color: <?php echo $json_a['COLOR_FONDO_BOTON']; ?> !important;
   }
 
   p a:hover, button:hover{
-    color:  <?php echo COLOR_LETRA_BOTON_HOVER; ?> !important;
-    background-color:  <?php echo COLOR_FONDO_BOTON_HOVER; ?> !important;
+    color:  <?php echo $json_a['COLOR_LETRA_BOTON_HOVER']; ?> !important;
+    background-color:  <?php echo $json_a['COLOR_FONDO_BOTON_HOVER']; ?> !important;
   }
 
   h1, h2{
-    color:  <?php echo COLOR_LETRA_HEADER; ?> !important;
+    color:  <?php echo $json_a['COLOR_LETRA_HEADER']; ?> !important;
   }
 
   p {
-    color:  <?php echo COLOR_LETRA_PARRAFO; ?> !important;
+    color:  <?php echo $json_a['COLOR_LETRA_PARRAFO']; ?> !important;
   }
 
   label
   {
-    color:  <?php echo COLOR_LETRA_LABEL; ?> !important;
+    color:  <?php echo $json_a['COLOR_LETRA_LABEL']; ?> !important;
   }
 
   input
   {
-    color: <?php echo COLOR_LETRA_INPUT; ?> !important;
-    background-color: <?php echo COLOR_FONDO_INPUT; ?> !important;
+    color: <?php echo $json_a['COLOR_LETRA_INPUT']; ?> !important;
+    background-color: <?php echo $json_a['COLOR_FONDO_INPUT']; ?> !important;
   }
 
   textarea
   {
-    color: <?php echo COLOR_LETRA_TEXTAREA; ?> !important;
-    background-color: <?php echo COLOR_FONDO_TEXTAREA; ?> !important;
+    color: <?php echo $json_a['COLOR_LETRA_TEXTAREA']; ?> !important;
+    background-color: <?php echo $json_a['COLOR_FONDO_TEXTAREA']; ?> !important;
   }
 
   #menu_derecho{
-    background-color:  <?php echo COLOR_FONDO_MENU_DERECHO; ?> !important;
+    background-color:  <?php echo $json_a['COLOR_FONDO_MENU_DERECHO']; ?> !important;
   }
 
   #menu_izquierdo{
-    background-color:  <?php echo COLOR_FONDO_MENU_IZQUIERDO; ?> !important;
+    background-color:  <?php echo $json_a['COLOR_FONDO_MENU_IZQUIERDO']; ?> !important;
   }
 
   #contenedor{
-    background-color:  <?php echo COLOR_CONTAINER; ?> !important;
+    background-color:  <?php echo $json_a['COLOR_CONTAINER']; ?> !important;
   }
 
 </style>
-
-

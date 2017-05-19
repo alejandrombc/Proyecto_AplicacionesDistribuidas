@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../statics/css/mycss.css">
+    <title>Cross Site Scripting - XSS</title>
+    <script src="../statics/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../statics/js/jqueryDB.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prevención de ataque Cross Site Scripting (XSS)</h1>
+      <p>A continuación se explicará como se llevó acabo la prevención de ataques cross site.</p>
+      <div class="panel-group">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Validación de datos</div>
+          <div class="panel-body">
+            <p>
+              Como se conoce, los ataques XSS basan su poder en las pocas validaciones en las entradas de los usuarios, permitiendo mostrar datos que ellos mismos puedan ingresar sin validación alguna, esto les permite inyectar código malicioso que puede perjudicar a otros usuarios o al servidor.</p>
+              <p>
+              Para evitar esto, se implementó una función llamada <span style="color:#316fcc; font-weight: bold;">validacion_de_datos(<span style="color:#cc2b2b;">$input</span>)</span>
+              en la cual se evaluarán las entradas de los usuarios mediante diferentes funciones, para eliminar de la misma, los posibles caracteres especiales.
+              Entre estas funciones tenemos:
+            </p>
+            <ul>
+              <li><a href="http://php.net/manual/es/function.trim.php"><span style="color:#316fcc; font-weight: bold;">trim()</span></a>, para quitar los espacios.</li>
+              <li><a href="http://php.net/manual/es/function.stripslashes.php"><span style="color:#316fcc; font-weight: bold;">stripslashes()</span></a>, para quitar los backslashes.</li>
+              <li><a href="http://php.net/manual/es/function.strip-tags.php"><span style="color:#316fcc; font-weight: bold;">strip_tags()</span></a>, para quitar cualquier etiqueta HTML.</li>
+              <li><a href="http://php.net/manual/es/function.htmlspecialchars.php"><span style="color:#316fcc; font-weight: bold;">htmlspecialchars()</span></a>, para quitar los caracteres especiales.</li>
+            </ul>
+            <p>Retorna:
+              <ul>
+                <li>Un string sin ningún tipo de carácter especial.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <button id="back" class="btn btn-primary" type="button" name="button">Volver</button>
+    </div>
+  </body>
+</html>

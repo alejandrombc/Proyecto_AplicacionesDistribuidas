@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../statics/css/mycss.css">
+    <title>Como configurar la Base de Datos</title>
+    <script src="../statics/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../statics/js/jqueryDB.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Como configurar la Base de Datos</h1>
+      <p>A continuación se explicará como manejar y/o configurar la base de datos del sistema.</p>
+      <div class="panel-group">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Crear conexión</div>
+          <div class="panel-body">
+            <p>El primer paso es entrar al archivo <span style="color:#17994b; font-weight: bold;">config_bd.php</span> para introducir los campos necesarios
+            para establecer la conexión, como lo son:</p>
+            <ul>
+              <li>El SMDB a usar, en este caso MYSQL (Además, como punto escalable, tenemos la opción de MongoDB).</li>
+              <li>El Host.</li>
+              <li>El Usuario de la Base de Datos.</li>
+              <li>La Clave del usuario previamente mencionado.</li>
+            </ul>
+            <p>
+              Posteriormente en el archivo <span style="color:#17994b; font-weight: bold;">conexion_BD.php</span>
+              existe una funcion llamada <span style="color:#316fcc; font-weight: bold;">CrearConexion()</span>
+              la cual tomará los datos previamente mencionados para luego establecer la conexión con la base de datos.
+            </p>
+            <p>Retorna:
+              <ul>
+                <li>La conexión con la Base de datos</li>
+              </ul>
+            </p>
+            <p style="font-weight: bold;">
+              A partir de ahora asumiremos que todas las funciones están definidas en el archivo <span style="color:#17994b; font-weight: bold;">conexion_BD.php</span>.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Cerrar Conexión</div>
+          <div class="panel-body">
+            <p>
+              La función <span style="color:#316fcc; font-weight: bold;">CerrarConexión(<span style="color:#cc2b2b;">$conn</span>)</span> acabará con la conexión actual
+              que se tiene con la base de datos.
+            </p>
+            <p>Parametros:
+              <ul>
+                <li><span style="color:#cc2b2b; font-weight: bold;">$conn</span>, variable de conexión con la base de datos, esta variable es creada cuando se crea
+                  la conexión con la función <span style="color:#316fcc; font-weight: bold;">CrearConexion()</span>, previamente explicada.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Crear Base de Datos</div>
+          <div class="panel-body">
+            <p>
+              En este caso se usa la funcion <span style="color:#316fcc; font-weight: bold;">CrearBaseDeDatos(<span style="color:#cc2b2b;">$conn</span>,<span style="color:#cc2b2b;">$BD</span>)</span>,
+              la cual, como su nombre lo indica, crea una base de datos en el SMDB previamente especificado.
+            </p>
+            <p>
+              Parametros:
+              <ul>
+                <li><span style="color:#cc2b2b; font-weight: bold;">$conn</span>, variable de conexión con la base de datos, esta variable es creada cuando se abre
+                  la conexion con la función <span style="color:#316fcc; font-weight: bold;">CrearConexion()</span>, previamente explicada.</li>
+                <li><span style="color:#cc2b2b; font-weight: bold;">$BD</span>, Nombre de la base de datos a crear.</li>
+              </ul>
+            </p>
+            <p>Retorna:
+              <ul>
+                <li>Un mensaje indicando que se creó exitosamente.</li>
+                <li>Un mensaje indicando que ocurrio un error, en caso de que no se haya podido crear la base de datos.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Usar Base de Datos</div>
+          <div class="panel-body">
+            <p>
+              La función <span style="color:#316fcc; font-weight: bold;">UsarBaseDeDatos(<span style="color:#cc2b2b;">$conn</span>,<span style="color:#cc2b2b;">$BD</span>)</span>,
+              cambia la base de datos que se esta usando por la indicada.
+            </p>
+            <p>
+              Parametros:
+              <ul>
+                <li><span style="color:#cc2b2b; font-weight: bold;">$conn</span>, variable de conexión con la base de datos, esta variable es creada cuando se abre
+                  la conexión con la función <span style="color:#316fcc; font-weight: bold;">CrearConexion()</span>, previamente explicada.</li>
+                <li><span style="color:#cc2b2b; font-weight: bold;">$BD</span>, nombre de la base de datos que se va a usar.</li>
+              </ul>
+            </p>
+            <p>Retorna:
+              <ul>
+                <li>Un mensaje indicando que el cambio se llevó a cabo exitosamente.</li>
+                <li>Un mensaje indicando que ocurrió un error, en caso de que no se haya podido cambiar/usar la base de datos.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Ejecutar Query</div>
+          <div class="panel-body">
+            <p>
+              La función <span style="color:#316fcc; font-weight: bold;">EjecutarQuery(<span style="color:#cc2b2b;">$conn</span>,<span style="color:#cc2b2b;">$quey</span>)</span>,
+              ejecuta una consulta a la base de datos, previniendo los ataques SQL injection mediante el uso de la función <a href="http://php.net/manual/es/mysqli.prepare.php">prepare()</a> provista por <b>MYSQLi</b>.
+            </p>
+            <p>
+              Parametros:
+              <ul>
+                <li><span style="color:#cc2b2b; font-weight: bold;">$conn</span>, variable de conexión con la base de datos, esta variable es creada cuando se abre
+                  la conexión con la función <span style="color:#316fcc; font-weight: bold;">CrearConexion()</span>, previamente explicada.</li>
+                <li><span style="color:#cc2b2b; font-weight: bold;">$quey</span>, un string con la consulta a ejecutar.</li>
+              </ul>
+            </p>
+            <p>Retorna:
+              <ul>
+                <li>Un mensaje indicando que se llevó a cabo la consulta exitosamente.</li>
+                <li>Un mensaje indicando que ocurrió un error, en caso de que no se haya podido ejecutar la consulta.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">Commit</div>
+          <div class="panel-body">
+            <p>
+              La función <span style="color:#316fcc; font-weight: bold;">Commit(<span style="color:#cc2b2b;">$conn</span>)</span>,
+              realiza el commit sobre la base de datos, guardando así, los posibles cambios efectuados.
+            </p>
+            <p>
+              Parametros:
+              <ul>
+                <li><span style="color:#cc2b2b; font-weight: bold;">$conn</span>, variable de conexión con la base de datos, esta variable es creada cuando se abre
+                  la conexión con la función <span style="color:#316fcc; font-weight: bold;">CrearConexion()</span>, previamente explicada.</li>
+              </ul>
+            </p>
+            <p>Retorna:
+              <ul>
+                <li>Lleva a cabo el commit en caso de que no ocurra ningún error</li>
+                <li>Un mensaje indicando que ocurrió un error, en caso de que no se haya podido ejecutar el commit.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">RollBack</div>
+          <div class="panel-body">
+            <p>
+              La función <span style="color:#316fcc; font-weight: bold;">RollBack(<span style="color:#cc2b2b;">$conn</span>)</span>,
+              realiza RollBack sobre la base de datos, deshaciendo los cambios efectuados.
+            </p>
+            <p>
+              Parametros:
+              <ul>
+                <li><span style="color:#cc2b2b; font-weight: bold;">$conn</span>, variable de conexión con la base de datos, esta variable es creada cuando se abre
+                  la conexión con la función <span style="color:#316fcc; font-weight: bold;">CrearConexion()</span>, previamente explicada.</li>
+              </ul>
+            </p>
+            <p>Retorna:
+              <ul>
+                <li>Lleva a cabo el RollBack en caso de que no ocurra ningún error</li>
+                <li>Un mensaje indicando que ocurrió un error, en caso de que no se haya podido ejecutar el RollBack.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">Consideraciones</div>
+          <div class="panel-body">
+            <p>
+              Cabe mencionar, como consideraciones finales, que todas las funciones previamente explicadas cuentan con mensajes indicando si ocurrió alguna excepción o error, y en dicho caso, cuál de ellas fue. Queda de parte de los programadores que usen la plantilla el programar la aplicación tal que no ocurran las mismas.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button id="back" class="btn btn-primary" type="button" name="button">Volver</button>
+    </div>
+  </body>
+</html>
