@@ -4,8 +4,23 @@
   body {
     /* Para que el fixed navbar se vea bien */
     padding-top: 70px;
+  
 
   }
+.navbar a {
+    color: white;
+  }
+
+
+  @media (max-width: 370px) {
+    .navbar a {
+      font-size: 14px;
+    }
+    body {
+    padding-top: 115px;
+    }
+  }
+
 
   .navbar-custom{
      background-color: <?php echo $json_a['COLOR_NAVBAR']; ?>;
